@@ -2,3 +2,22 @@
 
 Proyecto simple en java, simulador de cajero automático con gestión de usuarios.
 
+## Desarrollo
+
+### 1. Inicio
+
+![alt text](images/inicio.png)
+
+### 2. Creación de usuario
+
+![alt text](images/crear_usuario.png)
+
+### 3. Logueo
+
+![alt text](images/login.png)
+
+![alt text](images/main.png)
+
+### 4. Perfil
+
+![alt text](images/perfil.png)

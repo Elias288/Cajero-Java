@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="480.0" prefWidth="340.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cajero.MainController">
+   <children>
+      <Label text="Main">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="btn_verPerfil" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#switchToPerfil" text="Ver perfil" />
+            <Button fx:id="btc_transaccionar" layoutX="120.0" layoutY="116.0" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" text="Transaccionar">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btc_closeSession" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#closeSession" text="Cerrar Perfil">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

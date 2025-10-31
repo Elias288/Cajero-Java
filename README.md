@@ -25,3 +25,11 @@ Proyecto simple en java, simulador de cajero automático con gestión de usuario
 ### 5. Transaccionar
 
 ![alt text](images/transaccionar.png)
+
+## Base de datos
+
+Base de datos: `MSQL` -> `cajero`.
+
+[cajero.sql](./cajero.sql)
+
+![alt text](images/Cajero.png)

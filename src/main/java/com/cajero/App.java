@@ -7,7 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
 
+import com.cajero.manager.ConexionManager;
 import com.cajero.manager.SessionManager;
 import com.cajero.modelo.Usuario;
 
@@ -18,6 +20,7 @@ public class App extends Application {
 
     private static Scene scene;
     Usuario usuario = SessionManager.getInstance().getUsuarioActual();
+    Connection conexion = ConexionManager.getInstance().initConexion();
 
     @Override
     public void start(@SuppressWarnings("exports") Stage stage) throws IOException {
@@ -28,8 +31,6 @@ public class App extends Application {
     }
 
     public static void setRoot(String fxml) throws IOException {
-        // scene.setRoot(loadFXML(fxml));
-
         Parent root = loadFXML(fxml);
         scene.setRoot(root);
         ((Stage) scene.getWindow()).sizeToScene();

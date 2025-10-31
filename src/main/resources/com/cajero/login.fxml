@@ -9,24 +9,41 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="480.0" prefWidth="340.0" spacing="20.0"
-   xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-   fx:controller="com.cajero.LoginController">
+<VBox alignment="CENTER" prefHeight="480.0" prefWidth="340.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cajero.LoginController">
    <children>
-      <Label text="Login">
-         <font>
-            <Font name="System Bold" size="30.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txt_username" promptText="Nombre de usuario" />
-      <PasswordField fx:id="txt_pass" promptText="Contraseña" />
-      <FlowPane alignment="TOP_CENTER" prefHeight="50.0" prefWidth="300.0">
+      <VBox alignment="CENTER" prefHeight="423.0" prefWidth="300.0">
          <children>
-            <Button fx:id="Ingresar" prefHeight="50.0" prefWidth="140.0" text="Ingresar" />
-            <Button fx:id="btn_guest" mnemonicParsing="false" onAction="#swichToMainGuest"
-               prefHeight="50.0" prefWidth="140.0" text="Invitado" />
+            <Label text="Login">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_username" promptText="Nombre de usuario">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <PasswordField fx:id="txt_pass" promptText="Contraseña">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </PasswordField>
+            <FlowPane alignment="TOP_CENTER" prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="btn_ingresar" prefHeight="50.0" prefWidth="140.0" text="Ingresar">
+                     <FlowPane.margin>
+                        <Insets right="10.0" />
+                     </FlowPane.margin>
+                  </Button>
+                  <Button fx:id="btn_guest" mnemonicParsing="false" onAction="#swichToMainGuest" prefHeight="50.0" prefWidth="140.0" text="Invitado" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </FlowPane>
          </children>
-      </FlowPane>
+      </VBox>
+      <Label fx:id="lbl_connection" text="Label" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

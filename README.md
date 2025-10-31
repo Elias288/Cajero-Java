@@ -21,3 +21,7 @@ Proyecto simple en java, simulador de cajero automático con gestión de usuario
 ### 4. Perfil
 
 ![alt text](images/perfil.png)
+
+### 5. Transaccionar
+
+![alt text](images/transaccionar.png)

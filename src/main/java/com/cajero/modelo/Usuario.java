@@ -1,16 +1,19 @@
 package com.cajero.modelo;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Usuario {
-    private Integer Id;
+    private String Id;
     public String nombre;
     public String apellido;
     public String telefono;
     public String username;
     private String password;
     private String rol; // [admin, usuario, guest]
-    private Cuenta cuentas;
+    private Cuenta cuenta;
 
     public Usuario(String nombre, String apellido, String telefono, String username, String password, Boolean guest) {
+        this.Id = getAlphaNumericString();
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -19,7 +22,12 @@ public class Usuario {
         this.rol = guest ? "guest" : "usuario";
     }
 
-    public Integer getId() {
+    private static String getAlphaNumericString() {
+        int numero = ThreadLocalRandom.current().nextInt(10000, 100000);
+        return String.valueOf(numero);
+    }
+
+    public String getId() {
         return Id;
     }
 
@@ -32,11 +40,11 @@ public class Usuario {
     }
 
     public Cuenta getCuenta() {
-        return cuentas;
+        return cuenta;
     }
 
     public void setCuenta(Cuenta nuevaCuenta) {
-        this.cuentas = nuevaCuenta;
+        this.cuenta = nuevaCuenta;
     }
 
     public String getRol() {

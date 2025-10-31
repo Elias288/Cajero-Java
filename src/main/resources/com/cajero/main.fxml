@@ -13,10 +13,10 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+      <VBox alignment="CENTER" prefHeight="342.0" prefWidth="320.0">
          <children>
             <Button fx:id="btn_verPerfil" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#switchToPerfil" text="Ver perfil" />
-            <Button fx:id="btc_transaccionar" layoutX="120.0" layoutY="116.0" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" text="Transaccionar">
+            <Button fx:id="btc_transaccionar" layoutX="120.0" layoutY="116.0" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#switchToTransaccionar" text="Transaccionar">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>

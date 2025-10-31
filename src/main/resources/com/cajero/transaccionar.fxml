@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="480.0" minWidth="340.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cajero.TransaccionarController">
+   <children>
+      <Label text="Transaccionar">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="319.0">
+         <children>
+            <Label text="Monto disponible:">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></Label>
+            <Label fx:id="lbl_monto" text="Label">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <Separator prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="20.0" top="20.0" />
+         </VBox.margin>
+      </Separator>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="121.59996795654297" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.6000518798828" minWidth="10.0" prefWidth="198.40003204345703" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Cuenta destino" />
+            <Label text="Monto" GridPane.rowIndex="1" />
+            <TextField fx:id="txt_account" disable="true" text="11111" GridPane.columnIndex="1" />
+            <Spinner fx:id="spinner_amount" editable="true" prefHeight="26.0" prefWidth="225.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Motivo" GridPane.rowIndex="2" />
+            <TextField fx:id="txt_motivo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="btn_ver" disable="true" mnemonicParsing="false" onAction="#simular" text="Ver" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <Separator prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+      </Separator>
+      <HBox alignment="CENTER_LEFT" prefHeight="99.0" prefWidth="322.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <TextArea fx:id="txa_ver" editable="false" prefHeight="38.0" prefWidth="335.0" wrapText="true" />
+         </children></HBox>
+      <Separator prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+      </Separator>
+      <HBox alignment="CENTER_RIGHT" prefHeight="50.0">
+         <children>
+            <Button fx:id="btn_cancelar" mnemonicParsing="false" onAction="#switchToMain" text="Cancelar">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btn_enviar" disable="true" mnemonicParsing="false" onAction="#transaccionar" text="Enviar">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

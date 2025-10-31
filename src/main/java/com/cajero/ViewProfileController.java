@@ -18,18 +18,16 @@ public class ViewProfileController extends IOException {
 
     @FXML
     private Label lbl_nombre;
-
     @FXML
     private Label lbl_tel;
-
     @FXML
     private Label lbl_monto;
-
     @FXML
     private Label lbl_username;
-
     @FXML
     private Label lbl_rol;
+    @FXML
+    private Label lbl_id;
 
     @FXML
     private TableView<String> tabla_cuenta;
@@ -40,17 +38,18 @@ public class ViewProfileController extends IOException {
 
     @FXML
     private void initialize() {
-        if (usuario != null) {
+        Cuenta cuenta = usuario.getCuenta();
+
+        if (usuario != null && cuenta != null) {
+            lbl_id.setText(usuario.getId());
             lbl_nombre.setText(usuario.nombre + " " + usuario.apellido);
             lbl_tel.setText(usuario.telefono);
             lbl_username.setText(usuario.username);
-            lbl_monto.setText("$ " + usuario.getCuenta().getMonto().toString());
+            lbl_monto.setText("$ " + cuenta.getMonto().toString());
             lbl_rol.setText(usuario.getRol());
 
             col_movimientos
                     .setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue()));
-
-            Cuenta cuenta = usuario.getCuenta();
 
             listaMovimientos = FXCollections.observableArrayList(cuenta.getMovimientos());
 

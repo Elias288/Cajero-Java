@@ -27,4 +27,9 @@ public class MainController {
         SessionManager.getInstance().cerrarSesion();
         App.setRoot("primary");
     }
+
+    @FXML
+    private void switchToTransaccionar() throws IOException {
+        App.setRoot("transaccionar");
+    }
 }

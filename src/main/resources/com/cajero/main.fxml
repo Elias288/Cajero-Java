@@ -21,7 +21,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btc_closeSession" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#closeSession" text="Cerrar Perfil">
+            <Button fx:id="btc_closeSession" cancelButton="true" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#closeSession" text="Cerrar Perfil">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>

@@ -1,6 +1,7 @@
 package com.cajero;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
 import com.cajero.manager.SessionManager;
 import com.cajero.manager.TransactionManager;
@@ -79,7 +80,8 @@ public class TransaccionarController {
     @FXML
     private void transaccionar() throws IOException {
         try {
-            TransactionManager.sendAmount(usuario.getCuenta(), spinner_amount.getValue(), txt_motivo.getText(),
+            TransactionManager.sendAmount(usuario.getCuenta(), new BigDecimal(spinner_amount.getValue()),
+                    txt_motivo.getText(),
                     txt_account.getText());
             App.setRoot("main");
         } catch (Exception e) {

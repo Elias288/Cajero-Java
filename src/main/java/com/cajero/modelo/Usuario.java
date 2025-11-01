@@ -12,14 +12,27 @@ public class Usuario {
     private String rol; // [admin, usuario, guest]
     private Cuenta cuenta;
 
-    public Usuario(String nombre, String apellido, String telefono, String username, String password, Boolean guest) {
+    /* Crear nuevo usuario */
+    public Usuario(String nombre, String apellido, String telefono, String username, String guest, String password) {
         this.Id = getAlphaNumericString();
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.username = username;
         this.password = password;
-        this.rol = guest ? "guest" : "usuario";
+        this.rol = guest;
+    }
+
+    /* Cargar usuario */
+    public Usuario(String id, String nombre, String apellido, String telefono, String username, String rol,
+            String password) {
+        this.Id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.username = username;
+        this.rol = rol;
+        this.password = password;
     }
 
     private static String getAlphaNumericString() {
@@ -35,9 +48,9 @@ public class Usuario {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    // public void setPassword(String password) {
+    // this.password = password;
+    // }
 
     public Cuenta getCuenta() {
         return cuenta;

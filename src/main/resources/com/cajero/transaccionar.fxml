@@ -90,7 +90,7 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btn_enviar" disable="true" mnemonicParsing="false" onAction="#transaccionar" text="Enviar">
+            <Button fx:id="btn_enviar" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#transaccionar" text="Enviar">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>

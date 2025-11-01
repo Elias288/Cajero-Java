@@ -14,6 +14,8 @@ Proyecto simple en java, simulador de cajero automático con gestión de usuario
 
 ### 3. Logueo
 
+Para la contraseña se utiliza un hash bcrypt(12) - [generador de hash online](https://bcrypt-generator.com/)
+
 ![alt text](images/login.png)
 
 ![alt text](images/main.png)

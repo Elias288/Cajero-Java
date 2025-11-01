@@ -30,7 +30,7 @@
             </PasswordField>
             <FlowPane alignment="TOP_CENTER" prefHeight="50.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="btn_ingresar" prefHeight="50.0" prefWidth="140.0" text="Ingresar">
+                  <Button fx:id="btn_ingresar" defaultButton="true" onAction="#login" prefHeight="50.0" prefWidth="140.0" text="Ingresar">
                      <FlowPane.margin>
                         <Insets right="10.0" />
                      </FlowPane.margin>
@@ -43,7 +43,7 @@
             </FlowPane>
          </children>
       </VBox>
-      <Label fx:id="lbl_connection" text="Label" />
+      <Label fx:id="lbl_connection" text="Conectando..." />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

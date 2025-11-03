@@ -1,4 +1,4 @@
-<img width="492" height="515" alt="image" src="https://github.com/user-attachments/assets/5a04728d-a28e-49c4-9075-0c9ec68316be" /># Proyecto Cajero en Java
+# Proyecto Cajero en Java
 
 Proyecto simple en java, simulador de cajero automático con gestión de usuarios.
 

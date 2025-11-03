@@ -19,9 +19,15 @@ Proyecto simple en java, simulador de cajero automático con gestión de usuario
 
 ### 1. Inicio
 
+- [PrimaryController.java](src/main/java/com/cajero/PrimaryController.java)
+- [primary.fxml](src/main/resources/com/cajero/primary.fxml)
+
 ![alt text](images/inicio.png)
 
 ### 2. Creación de usuario
+
+- [CreateUserController.java](src/main/java/com/cajero/CreateUserController.java)
+- [createUser.fxml](src/main/resources/com/cajero/createUser.fxml)
 
 ![alt text](images/crear_usuario.png)
 
@@ -32,10 +38,16 @@ Proyecto simple en java, simulador de cajero automático con gestión de usuario
 
 Para la contraseña se utiliza un hash bcrypt(12) - [generador de hash online](https://bcrypt-generator.com/)
 
+- [LoginController.java](src/main/java/com/cajero/LoginController.java)
+- [login.fxml](src/main/resources/com/cajero/login.fxml)
+
 ![alt text](images/login.png)
 
 > [!NOTE]
 > Cuando no hay conexión a base de datos, la opción de logueo se desabilita y solo se permite entrar como invitado.
+
+- [MainController.java](src/main/java/com/cajero/MainController.java)
+- [main.fxml](src/main/resources/com/cajero/main.fxml)
 
 ![alt text](images/main.png)
 
@@ -44,9 +56,15 @@ Para la contraseña se utiliza un hash bcrypt(12) - [generador de hash online](h
 
 ### 4. Perfil
 
+- [ViewProfileController](src/main/java/com/cajero/ViewProfileController.java)
+- [viewProfile.fxml](src/main/resources/com/cajero/viewProfile.fxml)
+
 ![alt text](images/perfil.png)
 
 ### 5. Transaccionar
+
+- [TransaccionarController.java](src/main/java/com/cajero/TransaccionarController.java)
+- [transaccionar.fxml](src/main/resources/com/cajero/transaccionar.fxml)
 
 ![alt text](images/transaccionar.png)
 
@@ -54,6 +72,9 @@ Para la contraseña se utiliza un hash bcrypt(12) - [generador de hash online](h
 > Cuando no hay conexión a base de datos, solo se puede simular una transacción a la cuenta `11111`.
 
 ### 6. Ver cuentas
+
+- [VerCuentrasController.java](src/main/java/com/cajero/VerCuentasController.java)
+- [verCuentas](src/main/resources/com/cajero/verCuentas.fxml)
 
 ![alt text](images/verCuentas.png)
 

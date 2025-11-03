@@ -9,6 +9,7 @@ Proyecto simple en java, simulador de cajero automático con gestión de usuario
     - [3. Logueo](#3-logueo)
     - [4. Perfil](#4-perfil)
     - [5. Transaccionar](#5-transaccionar)
+    - [6. Ver cuentas](#6-ver-cuentas)
 - [Base de datos](#base-de-datos)
     - [Contenedor de MariaDB](#contenedor-mariadb)
     - [Diagrama](#diagrama)

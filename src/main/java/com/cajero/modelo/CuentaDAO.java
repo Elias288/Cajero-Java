@@ -50,7 +50,7 @@ public class CuentaDAO {
         return cuenta;
     }
 
-    private static ArrayList<String> getMovimientos(Connection conn, String cuentaId) throws SQLException {
+    public static ArrayList<String> getMovimientos(Connection conn, String cuentaId) throws SQLException {
         ArrayList<String> movimientos = new ArrayList<String>();
         String sql = "SELECT motivo, monto FROM `Movimiento` WHERE idCuenta = ?;";
         PreparedStatement stmt = conn.prepareStatement(sql);

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="450.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cajero.VerCuentasController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="450.0" text="Ver Cuentas" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbl_cuentas" prefHeight="356.0" prefWidth="450.0">
+        <columns>
+            <TableColumn fx:id="col_id" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="col_monto" prefWidth="75.0" text="Monto" />
+          <TableColumn fx:id="col_nombre" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="col_telefono" prefWidth="75.0" text="Teléfono" />
+            <TableColumn fx:id="col_username" prefWidth="75.0" text="N. usuario" />
+            <TableColumn fx:id="col_rol" prefWidth="75.0" text="Rol" />
+        </columns>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </TableView>
+      <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="450.0">
+         <children>
+            <Button fx:id="btn_volver" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" onAction="#switchToMain" text="Volver" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+   </padding>
+</VBox>

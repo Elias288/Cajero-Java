@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -62,5 +63,38 @@ public class UsuarioDAO {
             return user;
         }
         return null;
+    }
+
+    public static ArrayList<Usuario> getAllUsuarios(Connection conn) throws SQLException {
+        ArrayList<Usuario> users = new ArrayList<Usuario>();
+        String sql = "SELECT u.id, u.nombre, u.apellido, u.telefono, u.username, u.password, u.rol, Cuenta.id as idCuenta, Cuenta.monto FROM `Usuario` as u INNER JOIN Cuenta ON u.id = Cuenta.idUsuario";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            Usuario user = new Usuario(
+                    rs.getString("id"),
+                    rs.getString("nombre"),
+                    rs.getString("apellido"),
+                    rs.getString("telefono"),
+                    rs.getString("username"),
+                    rs.getString("rol"),
+                    rs.getString("password"));
+
+            // user.setCuenta(CuentaDAO.getCuentaByUsuarioId(conn, user.getId()));
+            Cuenta cuenta = new Cuenta(
+                    rs.getString("idCuenta"),
+                    rs.getBigDecimal("monto"),
+                    user.getId(),
+                    CuentaDAO.getMovimientos(conn, user.getId()));
+            user.setCuenta(cuenta);
+
+            users.add(user);
+        }
+
+        rs.close();
+        stmt.close();
+
+        return users;
     }
 }

@@ -40,6 +40,13 @@ Para la contraseña se utiliza un hash bcrypt(12) - [generador de hash online](h
 
 ![alt text](images/transaccionar.png)
 
+### 6. Ver cuentas
+
+> [!NOTE]
+> Solo para administradores (rol: admin)
+
+![alt text](images/verCuentas.png)
+
 ## Base de datos
 
 ### Contenedor MariaDB
@@ -57,6 +64,7 @@ podman run -d \
   mariadb:noble
 ```
 
+> [!NOTE]
 > Se puede acceder a este contenedor mediante el localhost:3306
 
 **Acceder a la base de datos en el contenedor**

@@ -25,13 +25,22 @@ Proyecto simple en java, simulador de cajero automático con gestión de usuario
 
 ![alt text](images/crear_usuario.png)
 
+> [!NOTE]
+> Cuando no hay conexión a base de datos, la creación de usuario funciona solo en local
+
 ### 3. Logueo
 
 Para la contraseña se utiliza un hash bcrypt(12) - [generador de hash online](https://bcrypt-generator.com/)
 
 ![alt text](images/login.png)
 
+> [!NOTE]
+> Cuando no hay conexión a base de datos, la opción de logueo se desabilita y solo se permite entrar como invitado.
+
 ![alt text](images/main.png)
+
+> [!NOTE]
+> El botón `Ver cuentas` solo se muestra para usuarios con rol `admin`.
 
 ### 4. Perfil
 
@@ -41,12 +50,15 @@ Para la contraseña se utiliza un hash bcrypt(12) - [generador de hash online](h
 
 ![alt text](images/transaccionar.png)
 
+> [!NOTE]
+> Cuando no hay conexión a base de datos, solo se puede simular una transacción a la cuenta `11111`.
+
 ### 6. Ver cuentas
+
+![alt text](images/verCuentas.png)
 
 > [!NOTE]
 > Solo para administradores (rol: admin)
-
-![alt text](images/verCuentas.png)
 
 ## Base de datos
 

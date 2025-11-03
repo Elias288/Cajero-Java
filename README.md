@@ -1,4 +1,4 @@
-# Proyecto Cajero en Java
+<img width="492" height="515" alt="image" src="https://github.com/user-attachments/assets/5a04728d-a28e-49c4-9075-0c9ec68316be" /># Proyecto Cajero en Java
 
 Proyecto simple en java, simulador de cajero automático con gestión de usuarios.
 
@@ -91,7 +91,7 @@ Para la contraseña se utiliza un hash bcrypt(12) - [generador de hash online](h
 podman run -d \
     --name mariaDB \
   -e MARIADB_ROOT_PASSWORD=clave_root \
-  -e MARIADB_DATABASE=mi_base \
+  -e MARIADB_DATABASE=cajero \
   -e MARIADB_USER=usuario \
   -e MARIADB_PASSWORD=clave_usuario \
   -p 3306:3306 \
@@ -99,7 +99,7 @@ podman run -d \
 ```
 
 > [!NOTE]
-> Se puede acceder a este contenedor mediante el localhost:3306
+> Se puede acceder a este contenedor mediante el `jdbc:mariadb://localhost:3306/cajero`
 
 **Acceder a la base de datos en el contenedor**
 

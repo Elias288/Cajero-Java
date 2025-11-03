@@ -43,6 +43,7 @@
             </FlowPane>
          </children>
       </VBox>
+      <Button fx:id="btn_volver" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#switchToPrimary" text="Volver" />
       <Label fx:id="lbl_connection" text="Conectando..." />
    </children>
    <padding>

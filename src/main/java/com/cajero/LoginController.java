@@ -31,7 +31,7 @@ public class LoginController {
     private Button btn_ingresar;
 
     @FXML
-    private void initialize() {
+    private void initialize() throws IOException {
         if (conexion == null) {
             btn_ingresar.setDisable(true);
             txt_pass.setDisable(true);
@@ -82,5 +82,10 @@ public class LoginController {
             alerta.setContentText(e.getMessage() != null ? e.getMessage() : e.toString());
             alerta.showAndWait();
         }
+    }
+
+    @FXML
+    private void switchToPrimary() throws IOException {
+        App.setRoot("primary");
     }
 }

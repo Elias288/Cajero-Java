@@ -2,7 +2,9 @@ package com.cajero;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.Connection;
 
+import com.cajero.manager.ConexionManager;
 import com.cajero.manager.SessionManager;
 import com.cajero.manager.TransactionManager;
 import com.cajero.modelo.Cuenta;
@@ -20,6 +22,7 @@ import javafx.scene.control.Alert.AlertType;
 
 public class TransaccionarController {
     Usuario usuario = SessionManager.getInstance().getUsuarioActual();
+    Connection conexion = ConexionManager.getInstance().initConexion();
 
     @FXML
     private Label lbl_monto;
@@ -46,8 +49,11 @@ public class TransaccionarController {
 
         if (usuario != null) {
             Cuenta cuenta = usuario.getCuenta();
-            System.out.println(cuenta.getMonto());
             lbl_monto.setText("$" + cuenta.getMonto().toString());
+        }
+
+        if (conexion != null) {
+            txt_account.setDisable(false);
         }
 
         /*
@@ -78,14 +84,16 @@ public class TransaccionarController {
     }
 
     @FXML
-    private void transaccionar() throws IOException {
+    private void transaccionar() {
         try {
-            TransactionManager.sendAmount(usuario.getCuenta(), new BigDecimal(spinner_amount.getValue()),
+            TransactionManager.sendAmount(
+                    usuario.getCuenta(),
+                    new BigDecimal(spinner_amount.getValue()),
                     txt_motivo.getText(),
                     txt_account.getText());
             App.setRoot("main");
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
             txa_ver.setText("");
 
             Alert alerta = new Alert(AlertType.ERROR);

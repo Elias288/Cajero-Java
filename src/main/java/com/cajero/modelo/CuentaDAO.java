@@ -108,6 +108,7 @@ public class CuentaDAO {
             updateCuentaMonto(conn, cuentaOrd, monto);
 
         } catch (Exception e) {
+            e.printStackTrace();
             Alert alerta = new Alert(AlertType.ERROR);
             alerta.setTitle("Error");
             alerta.setHeaderText("Se produjo un error");

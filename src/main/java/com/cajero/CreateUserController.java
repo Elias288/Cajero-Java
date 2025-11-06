@@ -45,6 +45,7 @@ public class CreateUserController {
             try {
                 UsuarioDAO.storeUser(conexion, nuevUsuario, txt_pass.getText());
             } catch (Exception e) {
+                e.printStackTrace();
                 Alert alerta = new Alert(AlertType.ERROR);
                 alerta.setTitle("Error");
                 alerta.setHeaderText("Se produjo un error");

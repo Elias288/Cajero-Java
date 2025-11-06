@@ -77,6 +77,7 @@ public class LoginController {
             App.setRoot("main");
 
         } catch (Exception e) {
+            e.printStackTrace();
             Alert alerta = new Alert(AlertType.ERROR);
             alerta.setTitle("Error");
             alerta.setContentText(e.getMessage() != null ? e.getMessage() : e.toString());

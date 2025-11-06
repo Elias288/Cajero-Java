@@ -72,6 +72,7 @@ public class VerCuentasController {
             tbl_cuentas.setItems(listaUsuarios);
 
         } catch (Exception e) {
+            e.printStackTrace();
             Alert alerta = new Alert(AlertType.ERROR);
             alerta.setTitle("Error");
             alerta.setContentText("Error al cargar los usuarios");

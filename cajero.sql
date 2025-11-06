@@ -16,8 +16,11 @@ CREATE TABLE Cuenta (
 );
 
 CREATE TABLE Movimiento (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
     motivo VARCHAR(200) NOT NULL,
     monto DECIMAL(5) NOT NULL,
-    idCuenta VARCHAR(5) NOT NULL,
-    Foreign Key (idCuenta) REFERENCES Cuenta(id)
-)
+    idCuentaOrd VARCHAR(5) NOT NULL,
+    idCuentaBen VARCHAR(5) NOT NULL,
+    Foreign Key (idCuentaOrd) REFERENCES Cuenta(id),
+    Foreign Key (idCuentaBen) REFERENCES Cuenta(id)
+);

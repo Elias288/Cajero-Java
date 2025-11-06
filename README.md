@@ -111,6 +111,8 @@ podman exec -it mariaDB mariadb -u root -p
 
 ![alt text](images/Cajero.png)
 
+![alt text](images/Diagrama_SQL.png)
+
 ### SQL
 
 [cajero.sql](./cajero.sql)

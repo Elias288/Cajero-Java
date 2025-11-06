@@ -4,21 +4,24 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 
 import com.cajero.modelo.Cuenta;
+
 import com.cajero.modelo.CuentaDAO;
 
 public class TransactionManager {
     public static Connection conn = ConexionManager.getInstance().getConnection();
 
-    public static void ingreso(Cuenta cuenta, BigDecimal monto, String motivo) throws ArithmeticException {
+    public static void ingreso(Cuenta cuenta, BigDecimal monto, String motivo, String idCuentaBen)
+            throws ArithmeticException {
         if (conn != null)
-            CuentaDAO.storeMovimiento(conn, monto, motivo, cuenta);
+            CuentaDAO.storeMovimiento(conn, monto, motivo, cuenta, idCuentaBen);
 
         cuenta.addMonto(monto, motivo);
     }
 
-    public static void egreso(Cuenta cuenta, BigDecimal monto, String motivo) throws ArithmeticException {
+    public static void egreso(Cuenta cuenta, BigDecimal monto, String motivo, String idCuentaBen)
+            throws ArithmeticException {
         if (conn != null)
-            CuentaDAO.storeMovimiento(conn, monto.negate(), motivo, cuenta);
+            CuentaDAO.storeMovimiento(conn, monto.negate(), motivo, cuenta, idCuentaBen);
 
         cuenta.substractMonto(monto, motivo);
     }

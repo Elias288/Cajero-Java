@@ -52,13 +52,21 @@ public class CuentaDAO {
 
     public static ArrayList<String> getMovimientos(Connection conn, String cuentaId) throws SQLException {
         ArrayList<String> movimientos = new ArrayList<String>();
-        String sql = "SELECT motivo, monto FROM `Movimiento` WHERE idCuenta = ?;";
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, cuentaId);
+        PreparedStatement ingresos = conn.prepareStatement(
+                "SELECT motivo, monto FROM `Movimiento` WHERE idCuentaBen = ?");
+        PreparedStatement egresos = conn.prepareStatement(
+                "SELECT motivo, monto FROM `Movimiento` WHERE idCuentaOrd = ?");
 
-        ResultSet rs = stmt.executeQuery();
-        while (rs.next()) {
-            movimientos.add("+ $" + rs.getBigDecimal("monto") + " - " + rs.getString("motivo"));
+        ingresos.setString(1, cuentaId);
+        ResultSet rsIngresos = ingresos.executeQuery();
+        while (rsIngresos.next()) {
+            movimientos.add("+ $" + rsIngresos.getBigDecimal("monto") + " - " + rsIngresos.getString("motivo"));
+        }
+
+        egresos.setString(1, cuentaId);
+        ResultSet rsEgresos = egresos.executeQuery();
+        while (rsEgresos.next()) {
+            movimientos.add("- $" + rsEgresos.getBigDecimal("monto") + " - " + rsEgresos.getString("motivo"));
         }
 
         return movimientos;
@@ -81,21 +89,23 @@ public class CuentaDAO {
         stmt.close();
     }
 
-    public static void storeMovimiento(Connection conn, BigDecimal monto, String motivo, Cuenta cuenta) {
+    public static void storeMovimiento(Connection conn, BigDecimal monto, String motivo, Cuenta cuentaOrd,
+            String idCuentaBen) {
         try {
-            String sql = "INSERT INTO Movimiento (motivo, monto, idCuenta) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO Movimiento (motivo, monto, idCuentaOrd, idCuentaBen) VALUES (?, ?, ?, ?)";
 
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, motivo);
             stmt.setBigDecimal(2, monto);
-            stmt.setString(3, cuenta.getId());
+            stmt.setString(3, cuentaOrd.getId());
+            stmt.setString(4, idCuentaBen);
 
             ResultSet rs = stmt.executeQuery();
 
             rs.close();
             stmt.close();
 
-            updateCuentaMonto(conn, cuenta, monto);
+            updateCuentaMonto(conn, cuentaOrd, monto);
 
         } catch (Exception e) {
             Alert alerta = new Alert(AlertType.ERROR);
